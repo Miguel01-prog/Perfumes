@@ -1,0 +1,91 @@
+/* Estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", 
+    "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Estilos del encabezado */
+.perfume-header {
+  background-color: #570219;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 0rem;  /* Reducir el padding superior e inferior */
+  color: white;  /* Hacer que el texto sea blanco */
+}
+
+.logo-image {
+  width: 100px;
+  height: auto;
+  float: left;  /* Hace que la imagen se alinee a la izquierda */
+  margin-right: 1rem;  /* Espacio a la derecha de la imagen */
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo {
+  font-family: serif;
+  font-size: 1.5rem;
+  color: white;  /* Hacer que el texto del logo sea blanco */
+  margin: 0;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .main-nav {
+    margin-top: 0;
+  }
+}
+
+.nav-link {
+  color: #d1d5db;  /* Cambiar el color de los enlaces a un gris claro para contraste */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #f59e0b;
+}
+
+/* Estilos del pie de página */
+.perfume-footer {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}

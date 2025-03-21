@@ -1,0 +1,598 @@
+/* Estilos generales */
+:root {
+  --color-amber-50: #fffbeb;
+  --color-amber-100: #fef3c7;
+  --color-amber-200: #fde68a;
+  --color-amber-300: #fcd34d;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-amber-700: #b45309;
+  --color-amber-800: #92400e;
+  --color-amber-900: #78350f;
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-500: #f43f5e;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-500: #3b82f6;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-white: #ffffff;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.375rem;
+  --border-radius-lg: 0.5rem;
+  --border-radius-full: 9999px;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Estructura del constructor de perfumes */
+.main-container {
+  background: linear-gradient(130deg, #570219, #e9e8e8);
+  min-height: 100vh; /* Para ocupar toda la pantalla */
+  padding: 40px; /* Espaciado interno */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.perfume-builder {
+ 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa, #e3e7ea); /* Degradado suave */
+    padding: 30px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+    margin-top: 20px;
+    max-width: 1200px; /* Limitar el ancho */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+
+.perfume-builder.feminine .save-button {
+  background-color: var(--color-rose-500);
+}
+
+.perfume-builder.masculine .save-button {
+  background-color: var(--color-blue-500);
+}
+
+@media (min-width: 1024px) {
+  .perfume-builder {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Estilos de las pestañas */
+.tabs {
+  width: 100%;
+}
+
+.tabs-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--color-gray-100);
+}
+
+.tab-trigger {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  text-align: center;
+  background-color: var(--color-gray-100);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.tab-trigger.active {
+  background-color: var(--color-white);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-content {
+  display: none;
+  margin-top: 1rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Estilos de categorías */
+.category-header {
+  margin-bottom: 1rem;
+}
+
+.category-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-amber-900);
+}
+
+.category-description {
+  font-size: 0.875rem;
+  color: var(--color-amber-700);
+}
+
+/* Estilos de la cuadrícula de ingredientes */
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .ingredients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Estilos de las tarjetas de ingredientes */
+.ingredient-card {
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+
+.ingredient-card:hover {
+  box-shadow: #f43f5e;
+}
+
+.ingredient-card.selected {
+  border: 2px solid var(--color-amber-500);
+}
+
+.feminine .ingredient-card.selected {
+  border-color: var(--color-rose-500);
+}
+
+.masculine .ingredient-card.selected {
+  border-color: var(--color-blue-500);
+}
+
+.ingredient-content {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ingredient-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.droplet-icon {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-white);
+}
+
+.ingredient-info {
+  flex: 1;
+}
+
+.ingredient-name {
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.ingredient-description {
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.intensity-meter {
+  display: flex;
+  margin-top: 0.25rem;
+}
+
+.intensity-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--border-radius-full);
+  background-color: var(--color-gray-200);
+  margin-right: 0.25rem;
+}
+
+.intensity-dot.active {
+  background-color: var(--color-amber-500);
+}
+
+.feminine .intensity-dot.active {
+  background-color: var(--color-rose-500);
+}
+
+.masculine .intensity-dot.active {
+  background-color: var(--color-blue-500);
+}
+
+/* Estilos de la sección de fórmula */
+.formula-section {
+  height: 100%;
+}
+
+.formula-card {
+  height: 100%;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.formula-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.formula-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-amber-900);
+}
+
+.formula-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: 1px solid var(--color-gray-200);
+  background-color: var(--color-white);
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.save-button {
+  background-color: var(--color-amber-500);
+  color: var(--color-white);
+  border: none;
+}
+
+.action-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.action-text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .action-text {
+    display: inline;
+  }
+}
+
+.empty-formula {
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--color-gray-500);
+}
+
+.formula-content {
+  padding: 0 1rem 1rem 1rem;
+}
+
+/* Estilos de la cuadrícula de notas */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.notes-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.notes-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.ingredient-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.75rem;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.remove-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  cursor: pointer;
+}
+
+/* Estilos de la visualización de la fórmula */
+.formula-visualization {
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 1rem;
+}
+
+.visualization-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.visualization-container {
+  height: 10rem;
+  background-color: transparent;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualization-layer {
+  flex: 1;
+  display: flex;
+}
+
+.visualization-segment {
+  height: 100%;
+}
+
+/* Modal de compra */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.modal-container {
+
+  background: linear-gradient(130deg, #b1b1b1, #fffefe);
+  border-radius: var(--border-radius-lg);
+  width: 90%;
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--color-gray-600);
+  transition: color 0.2s ease-in-out;
+}
+
+.modal-step {
+  padding: 24px;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+  color: var(--color-gray-800);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.modal-actions.centered {
+  justify-content: center;
+}
+
+.modal-button {
+  padding: 10px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-button.primary {
+  background-color: #a1022d;
+  color: white;
+}
+.modal-button.primary :hover {
+  background-color: #570219;
+}
+
+.modal-button.secondary {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* Estilos para el resumen */
+.modal-summary {
+  margin-top: 20px;
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 20px;
+}
+
+.modal-summary h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.summary-ingredients {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary-category h4 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.summary-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-category li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.summary-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Estilos para el resumen de pedido */
+.order-summary {
+  background-color: var(--color-gray-100);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.summary-section {
+  margin-bottom: 20px;
+}
+
+.summary-section h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-gray-300);
+}
+
+.summary-ingredients.compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 8px;
+}
+
+/* Estilos para la confirmación */
+.confirmation {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.confirmation-icon {
+  font-size: 48px;
+  color: #10b981; /* verde */
+  margin-bottom: 16px;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  background-color: rgba(16, 185, 129, 0.1);
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+}
+
+.confirmation-message {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.confirmation-details {
+  color: var(--color-gray-600);
+  margin-bottom: 24px;
+}
+
