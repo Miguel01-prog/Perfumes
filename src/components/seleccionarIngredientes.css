@@ -36,7 +36,7 @@
 
 /* Estructura del constructor de perfumes */
 .main-container {
-  background: linear-gradient(130deg, #570219, #e9e8e8);
+  background: linear-gradient(130deg, #570219, #D8AE52);
   min-height: 100vh; /* Para ocupar toda la pantalla */
   padding: 40px; /* Espaciado interno */
   display: flex;

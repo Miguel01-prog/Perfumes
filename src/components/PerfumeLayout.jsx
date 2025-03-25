@@ -18,12 +18,6 @@ export default function PerfumeLayout({ children }) {
       <main className="main-content">
         {children} {/* Esto asegurará que el contenido de PerfumeBuilder se muestre */}
       </main>
-
-      <footer className="perfume-footer">
-        <div className="footer-content">
-          <p>© {new Date().getFullYear()} Atelier de Perfumes. Todos los derechos reservados.</p>
-        </div>
-      </footer>
     </div>
   )
 }
