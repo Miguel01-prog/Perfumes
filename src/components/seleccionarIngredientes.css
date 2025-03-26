@@ -121,12 +121,12 @@
 .category-title {
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--color-amber-900);
+  color: black;
 }
 
 .category-description {
   font-size: 0.875rem;
-  color: var(--color-amber-700);
+  color: var(--color-gray-800);
 }
 
 /* Estilos de la cuadrícula de ingredientes */
@@ -167,11 +167,11 @@
 }
 
 .feminine .ingredient-card.selected {
-  border-color: var(--color-rose-500);
+  border-color: black;
 }
 
 .masculine .ingredient-card.selected {
-  border-color: var(--color-blue-500);
+  border-color: black;
 }
 
 .ingredient-content {
@@ -203,6 +203,7 @@
 .ingredient-name {
   font-weight: 500;
   margin-bottom: 0.25rem;
+  color:black;
 }
 
 .ingredient-description {
@@ -259,7 +260,7 @@
 .formula-title {
   font-size: 1.125rem;
   font-weight: 500;
-  color: var(--color-amber-900);
+  color: var(--color-gray-800);
 }
 
 .formula-actions {
