@@ -4,6 +4,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { IoGiftOutline } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import "./home.css";
+import { Eye, Target, HeartHandshake  } from "lucide-react";
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -82,21 +83,27 @@ export default function Home() {
       <h2 className="features-title">Nosotros</h2>
       <div className="features-grid">
         <div className="feature-card">
-          <div className="feature-icon ingredients-icon"></div>
-          <h3 className="feature-title">Mision</h3>
+          <div className="feature-icon">
+          <Target size={50} color="#4A90E2" /> {/* Icono de Lucide */}
+          </div>
+          <h3 className="feature-title">Misión</h3>
           <p className="feature-description">
           Nuestra misión es crear experiencias olfativas únicas y personalizadas que reflejan la individualidad y el estilo de cada cliente. Nos comprometemos a utilizar ingredientes de alta calidad, técnicas innovadoras y un servicio excepcional para ayudar a nuestros clientes a descubrir su fragancia perfecta y expresar su personalidad a través del perfume.
           </p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon formula-icon"></div>
+          <div className="feature-icon">
+            <Eye size={50} color="#4A90E2" /> {/* Icono de Lucide */}
+          </div>
           <h3 className="feature-title">Visión</h3>
           <p className="feature-description">
             Revolucionar la industria de los perfumes mediante la personalización y la innovación, ofreciendo fragancias únicas y memorables que conecten con las emociones y deseos de nuestros clientes.
           </p>
         </div>
         <div className="feature-card">
-          <div className="feature-icon bottle-icon"></div>
+          <div className="feature-icon">
+            <HeartHandshake size={50} color="#4A90E2" /> 
+          </div>
           <h3 className="feature-title">Valores</h3>
           <p className="feature-description2">
             • <strong>Individualidad:</strong> Promover la autoexpresión a través de fragancias personalizadas. <br />
